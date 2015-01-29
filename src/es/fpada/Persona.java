@@ -19,6 +19,7 @@ public class Persona {
                 "\nPeso: " + this.peso +
                 "\nAltura: " + this.altura;
     }
+
     // Constructores
 
     public Persona() {
@@ -90,5 +91,16 @@ public class Persona {
         this.altura = altura;
     }
 
+    // Helpers
+    public double indiceMasaCorporal() {
+        return  (peso)/Math.pow(altura, 2);
+    }
 
+    public boolean esMayorDeEdad() {
+        if ( this.edad >= 18 ){
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
