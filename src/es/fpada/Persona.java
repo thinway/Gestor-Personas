@@ -11,7 +11,18 @@ public class Persona {
     private double peso;
     private double altura;
 
+    // Constructores
 
+    public Persona(String nombre, int edad, double peso){
+        // Observar el uso de this para diferenciar entre las
+        // variables de instancia y los parámetros de la función
+        this.nombre = nombre;
+        this.edad = edad;
+        this.peso = peso;
+    }
+
+    // Accessores
+    
     public String getNombre() {
         return nombre;
     }
