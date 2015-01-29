@@ -13,15 +13,6 @@ public class Persona {
     private double peso;
     private double altura;
 
-    public String toString(){
-        return "Nombre: " + this.nombre +
-                "\nEdad: " + this.edad +
-                "\nDNI: " + this.dni +
-                "\nSexo: " + this.sexo +
-                "\nPeso: " + this.peso +
-                "\nAltura: " + this.altura;
-    }
-
     // Constructores
 
     public Persona() {
@@ -33,12 +24,12 @@ public class Persona {
         this.altura = 0.0;
     }
 
-    public Persona(String nombre, int edad, double peso){
+    public Persona(String nombre, int edad, char sexo){
         // Observar el uso de this para diferenciar entre las
         // variables de instancia y los parámetros de la función.
         this.nombre = nombre;
         this.edad = edad;
-        this.peso = peso;
+        this.sexo = sexo;
     }
 
     public Persona(String nombre, int edad, char sexo, double peso, double altura) {
@@ -93,7 +84,16 @@ public class Persona {
         this.altura = altura;
     }
 
-    // Helpers
+    @Override
+    public String toString() {
+        return "Nombre: " + this.nombre +
+                "\nEdad: " + this.edad +
+                "\nDNI: " + this.dni +
+                "\nSexo: " + this.sexo +
+                "\nPeso: " + this.peso +
+                "\nAltura: " + this.altura;
+    }
+    
     public double indiceMasaCorporal() {
         // Devolvemos 0 si faltan los datos peso y altura
         if (this.peso == 0.0 || this.altura == 0.0){
@@ -119,12 +119,13 @@ public class Persona {
         }
     }
 
-    public void generaDNI() {
+    // Helpers
+    private void generaDNI() {
         Random rnd = new Random();
 
         String numDni = "";
 
-        numDni += (int)(rnd.nextDouble() * 10 + 1);
+        numDni += (int)(rnd.nextDouble() * 9 + 1);
 
         for (int i = 0; i < 7; i++){
             numDni += (int)(rnd.nextDouble() * 10);

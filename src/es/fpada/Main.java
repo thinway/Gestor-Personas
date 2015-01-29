@@ -23,7 +23,7 @@ public class Main {
         altura = in.nextDouble();
 
         Persona primeraPersona = new Persona(nombre, edad, sexo, peso, altura);
-        Persona segundaPersona = new Persona(nombre, edad, peso);
+        Persona segundaPersona = new Persona(nombre, edad, sexo);
         Persona terceraPersona = new Persona();
 
         System.out.println("Primera Persona");
