@@ -1,5 +1,7 @@
 package es.fpada;
 
+import java.util.Random;
+
 /**
  * Created by Fran Delgado on 29/1/15.
  */
@@ -37,6 +39,7 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
+        generaDNI();
     }
 
     public Persona(String nombre, int edad, String dni, char sexo, double peso, double altura) {
@@ -102,5 +105,35 @@ public class Persona {
         } else {
             return false;
         }
+    }
+
+    public boolean comprobarSexo(char sexo) {
+        if ( sexo == this.sexo ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public void generaDNI() {
+        Random rnd = new Random();
+
+        String numDni = "";
+
+        numDni += (int)(rnd.nextDouble() * 10 + 1);
+
+        for (int i = 0; i < 7; i++){
+            numDni += (int)(rnd.nextDouble() * 10);
+        }
+
+        numDni += calcularLetraDni(numDni);
+
+        this.dni = numDni;
+    }
+
+    private char calcularLetraDni(String numDni) {
+        String letrasDNI = "TRWAGMYFPDXBNJZSQVHLCKE";
+
+        return letrasDNI.charAt(Integer.parseInt(numDni) % 23);
     }
 }
