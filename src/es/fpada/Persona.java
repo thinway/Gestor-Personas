@@ -13,6 +13,15 @@ public class Persona {
 
     // Constructores
 
+    public Persona() {
+        this.nombre = "";
+        this.edad = 0;
+        this.dni = "";
+        this.sexo = 'H';
+        this.peso = 0.0;
+        this.altura = 0.0;
+    }
+
     public Persona(String nombre, int edad, double peso){
         // Observar el uso de this para diferenciar entre las
         // variables de instancia y los parámetros de la función.
