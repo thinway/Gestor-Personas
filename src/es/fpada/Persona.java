@@ -11,6 +11,14 @@ public class Persona {
     private double peso;
     private double altura;
 
+    public String toString(){
+        return "Nombre: " + this.nombre +
+                "\nEdad: " + this.edad +
+                "\nDNI: " + this.dni +
+                "\nSexo: " + this.sexo +
+                "\nPeso: " + this.peso +
+                "\nAltura: " + this.altura;
+    }
     // Constructores
 
     public Persona() {
@@ -81,4 +89,6 @@ public class Persona {
     public void setAltura(double altura) {
         this.altura = altura;
     }
+
+
 }
