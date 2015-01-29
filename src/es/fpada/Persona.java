@@ -39,14 +39,13 @@ public class Persona {
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
-        generaDNI();
     }
 
-    public Persona(String nombre, int edad, String dni, char sexo, double peso, double altura) {
+    public Persona(String nombre, int edad, char sexo, double peso, double altura) {
         // En esta ocasión utilizamos los accesores en los casos en que sea posible.
         setNombre(nombre);
         setEdad(edad);
-        this.dni = dni;
+        generaDNI();
         setSexo(sexo);
         setPeso(peso);
         setAltura(altura);
@@ -96,7 +95,12 @@ public class Persona {
 
     // Helpers
     public double indiceMasaCorporal() {
-        return  (peso)/Math.pow(altura, 2);
+        // Devolvemos 0 si faltan los datos peso y altura
+        if (this.peso == 0.0 || this.altura == 0.0){
+            return 0.0;
+        }else{
+            return  (peso)/Math.pow(altura, 2);
+        }
     }
 
     public boolean esMayorDeEdad() {
