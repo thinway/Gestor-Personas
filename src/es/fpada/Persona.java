@@ -6,7 +6,7 @@ package es.fpada;
 public class Persona {
     private String nombre;
     private int edad;
-    private String DNI;
+    private String dni;
     private char sexo;
     private double peso;
     private double altura;
@@ -15,14 +15,24 @@ public class Persona {
 
     public Persona(String nombre, int edad, double peso){
         // Observar el uso de this para diferenciar entre las
-        // variables de instancia y los parámetros de la función
+        // variables de instancia y los parámetros de la función.
         this.nombre = nombre;
         this.edad = edad;
         this.peso = peso;
     }
 
-    // Accessores
-    
+    public Persona(String nombre, int edad, String dni, char sexo, double peso, double altura) {
+        // En esta ocasión utilizamos los accesores en los casos en que sea posible.
+        setNombre(nombre);
+        setEdad(edad);
+        this.dni = dni;
+        setSexo(sexo);
+        setPeso(peso);
+        setAltura(altura);
+    }
+
+    // Accesores
+
     public String getNombre() {
         return nombre;
     }
